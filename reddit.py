@@ -1,16 +1,16 @@
 import praw
-
+import config
 
 def getPosts(subreddit, limit, nsfw=False):
   #get amount of posts from subreddit
   #do not get stickied posts.
   #do not get nsfw if False
-  #returns submission metadata as list of dicts'''
+  #returns submission metadata as list of dicts
   
   reddit = praw.Reddit(
-      client_id="",
-      client_secret="",
-      user_agent="",
+      client_id=config.reddit_client_id,
+      client_secret=config.reddit_client_secret,
+      user_agent=config.reddit_user_agent,
   )
   
   subreddit = reddit.subreddit(subreddit)

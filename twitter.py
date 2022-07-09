@@ -1,4 +1,5 @@
 import tweepy
+import config
 
 def postTweet(status="", file=None):
 #post tweet to twitter. 
@@ -9,10 +10,10 @@ def postTweet(status="", file=None):
 #tweet_gif, tweet_video, tweet_image
 
   auth = tweepy.OAuth1UserHandler(
-    "",  # API KEY
-    "", #API SECRET
-    "", # ACCESS TOKEN
-    "" # ACCESS TOKEN SECRET
+    config.twitter_api_key,  # API KEY
+    config.twitter_api_secret, #API SECRET
+    config.twitter_access_token, # ACCESS TOKEN
+    config.twitter_access_secret # ACCESS TOKEN SECRET
   )
   
   api = tweepy.API(auth)

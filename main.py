@@ -15,3 +15,6 @@ for submission in getPosts("dankmemes", 10):
   status = f"""https://reddit.com{submission["permalink"]}
   #memes #dankmemes"""
   postTweet(status=status, file=getFile(submission["url"]))
+  
+def run():
+  pass
