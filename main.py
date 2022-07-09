@@ -11,10 +11,13 @@ def getFile(url):
     
   return file_name
 
-for submission in getPosts("dankmemes", 10):
-  status = f"""https://reddit.com{submission["permalink"]}
-  #memes #dankmemes"""
-  postTweet(status=status, file=getFile(submission["url"]))
   
 def run():
-  pass
+  for submission in getPosts("dankmemes", 10):
+    status = f"""https://reddit.com{submission["permalink"]}
+      #memes #dankmemes"""
+    postTweet(status=status, file=getFile(submission["url"]))
+
+
+if __name__ == '__main__':
+  run()

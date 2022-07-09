@@ -23,6 +23,7 @@ def postTweet(status="", file=None):
       file_type = "tweet_image"
     elif file_type == "gif":
       file_type = "tweet_gif"
+      
 
     media = api.media_upload(file, media_category=file_type)
     api.update_status(status=status, media_ids=[media.media_id])
